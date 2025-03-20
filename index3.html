@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Information</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100..900&family=Noto+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container" id="capture">
+      <div class="header" id="headerText">
+        || श्री बहिरीदेव प्रसन्न || श्री गजानन प्रसन्न || खंडोबा प्रसन्न ||
+      </div>
+      <div class="title">मुलाची माहिती</div>
+      <div class="profile">
+        <div class="profile-info">
+          <div class="info">
+            <span>मुलाचे नाव :</span>
+            <span id="name">गोविंदा दिनेश पाटील.</span>
+          </div>
+          <div class="info">
+            <span>जन्म दिनांक :</span> <span id="dob">१०/०२/१९९२</span>
+          </div>
+          <div class="info">
+            <span>जन्म वेळ :</span> <span id="time">३.२० दुपारी.</span>
+          </div>
+          <div class="info">
+            <span>जन्म स्थळ :</span>
+            <span id="place">सिव्हिल हॉस्पिटल, गडब.</span>
+          </div>
+          <div class="info">
+            <span>वर्ण :</span> <span id="varna">गोरा</span>
+          </div>
+          <div class="info">
+            <span>रक्त गट :</span> <span id="blood">O +ve</span>
+          </div>
+          <div class="info">
+            <span>रास :</span> <span id="rashi">कुंभ</span>
+          </div>
+          <div class="info">
+            <span>उंची :</span> <span id="height">५ फूट ४ इंच</span>
+          </div>
+          <div class="info">
+            <span>शिक्षण :</span>
+            <span id="education"
+              >ITI - MMTM , Diploma in mechanical engineering.</span
+            >
+          </div>
+          <div class="info">
+            <span>जात :</span> <span id="caste">हिंदू आगरी</span>
+          </div>
+          <div class="info">
+            <span>नोकरी :</span>
+            <span id="job">Millwrite Mechanic (on contract)</span>
+          </div>
+          <div class="info">
+            <span>कंपनी :</span> <span id="company">Mazagon Dockyard Ltd.</span>
+          </div>
+          <div class="info">
+            <span>उत्पन्न :</span> <span id="income">6 LPA</span>
+          </div>
+          <div class="info">
+            <span>संपर्क :</span> <span id="contact">9764214824 (Self)</span>
+          </div>
+        </div>
+        <div class="profile-img">
+          <img id="profileImage" src="./AB-photo-1.jpeg" alt="Profile Image" />
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="family-info">
+          <div class="section-title">कौटुंबिक माहिती</div>
+          <div class="info">
+            <span>आईचे नाव :</span>
+            <span id="mother">शैला पाटील. ( शेतकरी / गृहिणी )</span>
+          </div>
+          <div class="info">
+            <span>मोठी बहिण :</span>
+            <span id="sister">शितल भरत घरत. ( विवाहित )</span>
+          </div>
+          <div class="info">
+            <span>मोठा भाऊ :</span>
+            <span id="brother">चंदन पाटील. ( विवाहित )</span>
+          </div>
+          <div class="info">
+            <span>सध्याचा पत्ता :</span>
+            <span id="address"
+              >मु. बहिरीचपाडा, पो. हाशिवरे, ता. अलिबाग, ४०२२०९</span
+            >
+          </div>
+
+          <div class="Apeksha">
+            <div class="section-title">अपेक्षा</div>
+            <div class="info">
+              <span id="expectations"
+                >मी सुशिक्षित, नोकरी करणारी आणि कुटुंबाची काळजी घेणारी मुलगी
+                शोधत आहे.</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-img">
+          <img id="secondImage" src="./AB-photo-2.jpeg" alt="Profile Image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <h2>Update Profile Information</h2>
+      <form id="updateForm">
+        <div id="formFields"></div>
+        <label for="photo1">Profile Photo 1:</label>
+        <input type="file" id="photo1" accept="image/*" />
+        <label for="photo2">Profile Photo 2:</label>
+        <input type="file" id="photo2" accept="image/*" />
+        <label for="headerText">Header Text:</label>
+        <input
+          type="text"
+          id="form-headerText"
+          value="|| श्री बहिरीदेव प्रसन्न || श्री गजानन प्रसन्न || खंडोबा प्रसन्न ||"
+        />
+        <button type="button" onclick="updateProfile()">Update</button>
+      </form>
+      <button onclick="downloadImage()">Download as Image</button>
+    </div>
+
+    <style>
+      body,
+      html,
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Hind", sans-serif;
+        font-family: "Poppins", sans-serif;
+        font-family: "Noto Sans", sans-serif;
+        background-color: #f9f9f9;
+        margin: 3vw;
+      }
+      .container {
+        width: 100%;
+        margin: 0 auto;
+        background-color: #fff;
+        background-color: #f9f9f9;
+        padding: 3vw;
+        margin: 0;
+        border-style: outset double;
+        border-color: coral;
+        border-width: 0.8vw;
+        box-sizing: border-box;
+      }
+      .header,
+      .title,
+      .section-title {
+        text-align: center;
+        font-size: 2.5vw;
+        margin-bottom: 2vw;
+        font-weight: bold;
+        text-decoration: underline;
+        letter-spacing: 1.5px;
+      }
+      .profile {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2vw;
+      }
+      .profile-info {
+        width: 60%;
+      }
+      .profile-img {
+        width: 40%;
+      }
+      .profile-img img {
+        width: 100%;
+        border-radius: 3vw;
+      }
+      .info {
+        margin-bottom: 1.5vw;
+        font-size: 2vw;
+      }
+      .info span {
+        font-weight: bold;
+      }
+      .section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2vw;
+      }
+      .family-info {
+        width: 60%;
+      }
+      .form-section {
+        margin-top: 4vw;
+        padding: 2vw;
+        background-color: #fff8f0;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+      }
+      .form-section h2 {
+        margin-bottom: 1vw;
+      }
+      .form-section label {
+        display: block;
+        margin: 0.5vw 0;
+        font-weight: bold;
+      }
+      .form-section input {
+        width: 100%;
+        padding: 0.8vw;
+        margin-bottom: 1.5vw;
+        border: 1px solid #ccc;
+      }
+      .form-section button {
+        padding: 1vw 2vw;
+        background-color: coral;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+
+    <!-- JavaScript Section -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script>
+      // Generate form fields dynamically
+      document.addEventListener("DOMContentLoaded", function () {
+        const fields = [
+          "name",
+          "dob",
+          "time",
+          "place",
+          "varna",
+          "blood",
+          "rashi",
+          "height",
+          "education",
+          "caste",
+          "job",
+          "company",
+          "income",
+          "contact",
+          "mother",
+          "sister",
+          "brother",
+          "address",
+          "expectations",
+        ];
+        const formFields = document.getElementById("formFields");
+
+        fields.forEach((field) => {
+          const value = document.getElementById(field)
+            ? document.getElementById(field).innerText
+            : "";
+          formFields.innerHTML += `        
+            <label for="${field}">${field}:</label>
+            <input type="text" id="form-${field}" value="${value}" />
+          `;
+        });
+      });
+
+      // Update Profile Data
+      function updateProfile() {
+        const fields = [
+          "name",
+          "dob",
+          "time",
+          "place",
+          "varna",
+          "blood",
+          "rashi",
+          "height",
+          "education",
+          "caste",
+          "job",
+          "company",
+          "income",
+          "contact",
+          "mother",
+          "sister",
+          "brother",
+          "address",
+          "expectations",
+        ];
+
+        fields.forEach((field) => {
+          const value = document.getElementById(`form-${field}`).value;
+          document.getElementById(field).innerText = value;
+        });
+
+        // Update header text
+        const headerText = document.getElementById("form-headerText").value;
+        document.getElementById("headerText").innerText = headerText;
+
+        // Handle Profile Photo 1
+        const photo1 = document.getElementById("photo1").files[0];
+        if (photo1) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profileImage").src = e.target.result;
+          };
+          reader.readAsDataURL(photo1);
+        }
+
+        // Handle Profile Photo 2
+        const photo2 = document.getElementById("photo2").files[0];
+        if (photo2) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("secondImage").src = e.target.result;
+          };
+          reader.readAsDataURL(photo2);
+        }
+      }
+
+      // Download as Image using Canvas
+      function downloadImage() {
+        const element = document.getElementById("capture");
+
+        // Create a canvas from the element
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Get the bounding box of the element to set canvas size
+        const rect = element.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+
+        // Use html2canvas to draw the content to canvas
+        html2canvas(element, { canvas: canvas, scale: 3 }).then(() => {
+          const imageData = canvas.toDataURL("image/png");
+
+          // Create an invisible link to trigger the download
+          const link = document.createElement("a");
+          link.href = imageData;
+          link.download = "profile-output.png";
+          link.click();
+        });
+      }
+    </script>
+  </body>
+</html>
